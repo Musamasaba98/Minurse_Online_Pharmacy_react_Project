@@ -1,7 +1,11 @@
+import React from "react";
+import Navbar from "./components/Navbar";
 
 function Root() {
   return (
-    <h1>Hello Minurse</h1>
+    <>
+      <Navbar />
+    </>
   );
 }
 
