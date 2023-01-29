@@ -57,8 +57,10 @@ const Navbar = () => {
   return (
     <Box>
       <AppBar
-        position="static"
+        position="fixed"
         sx={{
+          top: 0,
+          bottom: "auto",
           backgroundColor: "#fff",
           color: "#1976d2",
           display: { xs: "none", md: "flex" },
@@ -270,8 +272,10 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
       <AppBar
-        position="static"
+        position="fixed"
         sx={{
+          top: 0,
+          bottom: "auto",
           backgroundColor: "#fff",
           color: "#1976d2",
           display: { xs: "block", md: "none" },

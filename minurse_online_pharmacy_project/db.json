@@ -1,19 +1,74 @@
-{
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
+
+ {
+  "products": [
+    { "id": 1, "name": "Neomycin", "image": "antibiotic.webp", "quantity": 10,"category":["pharmacy","antibiotics"],"price":8800, "isInStock": true },
+    { "id": 2, "name": "Cefuroxime", "image": "antibiotic1.webp", "quantity": 5,"category":["pharmacy","antibiotics"],"price":7800, "isInStock": true },
+    { "id": 3, "name": "Rifabutin 150 Mg", "image": "antibiotics.jpeg", "quantity": 0, "category":["pharmacy","antibiotics"],"price":9300,"isInStock": false },
+    { "id": 4, "name": "Metronidazole", "image": "antibiotics2.jpg", "quantity": 10,"category":["pharmacy","antibiotics"], "price":55000,"isInStock": true },
+    { "id": 5, "name": "Apixaban", "image": "anticoagulant.webp", "quantity": 5,"category":["pharmacy","anticoagulant"], "price":23000,"isInStock": true },
+    { "id": 6, "name": "Clotrimazole 100mg", "image": "antifungal.webp", "quantity": 0, "category":["pharmacy","antifungal"],"price":5000,"isInStock": false },
+    { "id": 7, "name": "Loratadine", "image": "antihistamine.webp", "quantity": 10,"category":["pharmacy","antihistamine"], "price":12000,"isInStock": true },
+    { "id": 8, "name": "Atenolol", "image": "antihypertensive.webp", "quantity": 5,"category":["pharmacy","antihypertensive"], "price":60000,"isInStock": true },
+    { "id": 9, "name": "Thiazide", "image": "antihypertensive.jpeg", "quantity": 0, "category":["pharmacy","antihypertensive"],"price":79000,"isInStock": false },
+    { "id": 10, "name": "Doxycline", "image": "antimalarial.jpeg", "quantity": 10,"category":["pharmacy","antimalarial"], "price":79000,"isInStock": true },
+    { "id": 11, "name": "Chloroquine", "image": "antimalarial1.webp", "quantity": 5,"category":["pharmacy","antimalarial"], "price":90000,"isInStock": true },
+    { "id": 12, "name": "Budesonide Bunase", "image": "antinflamatory.webp", "quantity": 0, "category":["pharmacy","antinflamatory"],"price":13000,"isInStock": false },
+    { "id": 13, "name": "Zimune D3", "image": "antiviral.webp", "quantity": 10,"category":["pharmacy","antiviral"],"price":15000, "isInStock": true },
+    { "id": 14, "name": "Artene", "image": "artene.webp", "quantity": 5,"category":["pharmacy","psychotropics"],"price":10500, "isInStock": true },
+    { "id": 15, "name": "BCG Vaccine", "image": "bcg.webp", "quantity": 0, "category":["pharmacy","vaccine"],"price":12000,"isInStock": false },
+    { "id": 16, "name": "Polio Vaccine", "image": "vaccine.webp", "quantity": 10,"category":["pharmacy","vaccine"],"price":7500, "isInStock": true },
+    { "id": 17, "name": "HPV Vaccine", "image": "hpv.jpeg", "quantity": 5,"category":["pharmacy","vaccine"],"price":7500, "isInStock": true },
+    { "id": 18, "name": "COVID-19 Vaccine", "image": "vaccine2.webp", "quantity": 0, "category":["pharmacy","vaccine"],"price":80000,"isInStock": false },
+    { "id": 19, "name": "Green Seed", "image": "herbal1.webp", "quantity": 10,"category":["pharmacy","herbal"],"price":19000, "isInStock": true },
+    { "id": 20, "name": "Aloe Vera", "image": "herbal2.jpeg", "quantity": 5,"category":["pharmacy","herbal"], "price":10000,"isInStock": true },
+    { "id": 21, "name": "Onion", "image": "herbal3.jpg", "quantity": 0, "category":["pharmacy","herbal"],"price":8000,"isInStock": false },
+    { "id": 22, "name": "Garlic", "image": "herbal4.webp", "quantity": 10,"category":["pharmacy","herbal"], "price":7000,"isInStock": true },
+    { "id": 23, "name": "Placebo", "image": "placebo.webp", "quantity": 5,"category":["pharmacy","placebo"],"price":3000, "isInStock": true },
+    { "id": 24, "name": "cpz", "image": "cpz.webp", "quantity": 0, "category":["pharmacy","psychotropics"],"price":25000,"isInStock": false },
+    { "id": 25, "name": "Diazepam", "image": "diazepam.webp", "quantity": 10,"category":["pharmacy","psychotropics"],"price":25000, "isInStock": true },
+    { "id": 26, "name": "DPT", "image": "hpv.jpeg", "quantity": 5,"category":["pharmacy","vaccine"], "price":10000,"isInStock": true },
+    { "id": 27, "name": "Lotion", "image": "lotion.webp", "quantity": 0, "category":["pharmacy","beauty","lotion"],"price":10000,"isInStock": false },
+    { "id": 28, "name": "Chemicals", "image": "fumigation.jpeg", "quantity": 10,"category":["laboratory","DNA"], "price":17000,"isInStock": true },
+    { "id": 29, "name": "Vital Monitor", "image": "equipment6.webp", "quantity": 5,"category":["laboratory","Blood_test"], "price":800000,"isInStock": true },
+    { "id": 30, "name": "Syringe", "image": "equipment.webp", "quantity": 0, "category":["equipment","general"],"price":2000,"isInStock": false },
+    { "id": 31, "name": "sphygmomanometer", "image": "equipment3.jpg", "quantity": 10,"category":["equipment","general"], "price":50000,"isInStock": true },
+    { "id": 32, "name": "Thermometer", "image": "equipment5.webp", "quantity": 5,"category":["equipment","general"], "price":10000,"isInStock": true },
+    { "id": 33, "name": "Wheel Chair", "image": "equipment2.webp", "quantity": 0, "category":["equipment","laboratory"],"price":300000,"isInStock": false },
+    { "id": 34, "name": "Diagnostic Chair", "image": "equipment3.webp", "quantity": 10,"category":["equipment","laboratory"], "price":500000,"isInStock": true },
+    { "id": 35, "name": "Test Tubes", "image": "equipment8.jpg", "quantity": 5,"category":["equipment","laboratory"], "price":35000,"isInStock": true },
+    { "id": 36, "name": "Lab Samples", "image": "labtest.webp", "quantity": 0, "category":["equipment","laboratory"],"price":10000,"isInStock": false },
+    { "id": 37, "name": "Gloves", "image": "gloves.webp", "quantity": 0, "category":["equipment","general"],"price":15000,"isInStock": false },
+    { "id": 38, "name": "Glasses", "image": "glasses.webp", "quantity": 10,"category":["equipment","general"], "price":150000,"isInStock": true },
+    { "id": 39, "name": "Movit", "image": "maseur.webp", "quantity": 5,"category":["pharmacy","beauty","lotion"], "price":6000,"isInStock": true },
+    { "id": 40, "name": "Stethoscope", "image": "equipment7.jpg", "quantity": 0, "category":["equipment","general"],"price":30000,"isInStock": false },
+    { "id": 41, "name": "Doctor", "image": "doctor.jpg", "quantity": 10,"category":["service"], "price":100000,"isInStock": true },
+    { "id": 42, "name": "Dentist", "image": "dentist1.webp", "quantity": 5,"category":["service"], "price":100000,"isInStock": true },
+    { "id": 43, "name": "Nurse", "image": "nurse.jpg", "quantity": 0, "category":["service"],"price":100000,"isInStock": false },
+    { "id": 44, "name": "Pediatrician", "image": "pediatrician.jpg", "quantity": 10,"category":["service"],"price":100000, "isInStock": true },
+    { "id": 45, "name": "Physician", "image": "physician.webp", "quantity": 5,"category":["service"], "price":100000,"isInStock": true },
+    { "id": 46, "name": "Maseur", "image": "maseur.webp", "quantity": 0, "category":["service"],"price":100000,"isInStock": false },
+    { "id": 47, "name": "Veterinary Doctor", "image": "vetDoc.webp", "quantity": 10,"category":["service"], "price":50000,"isInStock": true },
+    { "id": 48, "name": "Menestrual Cup", "image": "publichealth.webp", "quantity": 5,"category":["pharmacy","publichealth"], "price":30000,"isInStock": true },
+    { "id": 49, "name": "Masks", "image": "masks.webp", "quantity": 0, "category":["equipment","general"],"price":10000,"isInStock": false },
+    { "id": 50, "name": "Carbomazapine", "image": "mental1.webp", "quantity": 10,"category":["pharmacy","psychotropics"],"price":20000, "isInStock": true },
+    { "id": 51, "name": "Paracetamol", "image": "headache.webp", "quantity": 5,"category":["pharmacy","Analgesics"], "price":7000,"isInStock": true },
+    { "id": 52, "name": "Curamol Plus", "image": "headache2.webp", "quantity": 0, "category":["pharmacy","Analgesics"],"price":10000,"isInStock": false },
+    { "id": 53, "name": "Microscope", "image": "micoscope.webp", "quantity": 10,"category":["equipment","laboratory"], "price":8000,"isInStock": true },
+    { "id": 54, "name": "Eye Ointment", "image": "ointment.webp", "quantity": 5,"category":["pharmacy","antibiotics"], "price":5000,"isInStock": true }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+  "users": {
+    "admin": {
+      "id": 1, "name": "John Doe"," email": "johndoe@example.com", "role": "admin"
+    },
+    "normalUser": {
+      "id": 2, "name": "Jane Smith", "email": "janesmith@example.com", "role": "normal"
     }
-  ],
-  "profile": {
-    "name": "typicode"
+  },
+  "cart": {
+    "items": [
+      { "product": 1, "quantity": 2 },
+      {" product": 2, "quantity": 1 }
+    ],
+    "total": 0
   }
 }
