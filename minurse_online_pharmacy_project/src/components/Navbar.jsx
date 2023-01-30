@@ -71,26 +71,18 @@ const Navbar = () => {
         <Toolbar
           sx={{
             width: "100vw",
+            height: "5.5rem",
             display: "flex",
             minWidth: "70vw",
-            maxWidth: { md: "90vw", lg: "70vw" },
+            maxWidth: { md: "90vw", lg: "80vw" },
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Box display="flex" gap="2rem">
-            {/* <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 1 }}
-            >
-              <Menu />
-            </IconButton> */}
+          <Box display="flex" gap="2rem" mr="2rem">
             <Box
               component="img"
-              sx={{ height: 40, mt: 1 }}
+              sx={{ height: 60, mt: 0.1 }}
               alt="Logo"
               src={logo}
             />
@@ -120,12 +112,12 @@ const Navbar = () => {
           <Box
             sx={{
               display: "flex",
-              gap: "2rem",
+              gap: "1rem",
               flexGrow: 1,
               justifyContent: "flex-end",
             }}
           >
-            <Form style={{ maxWidth: "50%", flexGrow: 1 }}>
+            <Form style={{ maxWidth: { md: "60%", lg: "70%" }, flexGrow: 1 }}>
               <FormControl
                 sx={{ width: "100%", mb: 1, mt: 1 }}
                 variant="filled"

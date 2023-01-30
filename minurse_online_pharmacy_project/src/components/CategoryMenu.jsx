@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CategoryMenu = ({ categories }) => {
   return (
@@ -7,10 +8,9 @@ const CategoryMenu = ({ categories }) => {
       sx={{
         display: { xs: "none", md: "block" },
         backgroundColor: "#fff",
-        width: "18vw",
-        mt: "5rem",
         mb: "1rem",
         borderRadius: "5px",
+        //mt: { xs: "9rem", md: "6.5rem" },
         boxShadow:
           "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
       }}
@@ -29,25 +29,29 @@ const CategoryMenu = ({ categories }) => {
       </Typography>
       {categories.map((category, index) => {
         return (
-          <Box
+          <Link
+            to={`/${category}`}
             key={index}
-            sx={{
+            style={{
               cursor: "pointer",
               color: "#1c2126",
               transition: "all 300ms ease-in-out",
+              textDecoration: "none",
               "&:hover": {
                 backgroundColor: "transparent",
               },
             }}
           >
             <Typography
-              p="0.3rem 1rem"
+              p="0.3rem .8rem 0.3rem 1rem"
+              mr="1rem"
               sx={{
                 fontSize: "1rem",
                 fontWeight: 500,
                 transition: "all 200ms ease-in-out",
+                textDecoration: "none",
                 "&:hover": {
-                  fontSize: "1.2rem",
+                  fontSize: "1.00009rem",
                   fontWeight: 700,
                   color: "#1976d2",
                 },
@@ -55,7 +59,7 @@ const CategoryMenu = ({ categories }) => {
             >
               {category}
             </Typography>
-          </Box>
+          </Link>
         );
       })}
     </Box>
