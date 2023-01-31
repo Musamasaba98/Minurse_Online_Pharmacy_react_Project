@@ -15,7 +15,6 @@ const Products = () => {
   const finalCategories = [...new Set(categories)];
   return (
     <>
-      <Navbar />
       <Box
         sx={{
           marginTop: "6.3rem",

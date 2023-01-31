@@ -2,20 +2,16 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import CategoryMenu from "../components/CategoryMenu";
-import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 
-const Category = () => {
-  const products = useLoaderData();
-  const { category } = useParams();
-  let categories = [];
-  products
-    .filter((p) => p.category.includes(category))
-    .map((p) => (categories = [...categories, ...p.category]));
-  const finalCategories = [...new Set(categories)];
+const Catalog = () => {
+  const { products, q } = useLoaderData();
 
+  let categories = [];
+  products.map((p) => (categories = [...categories, ...p.category]));
+  const finalCategories = [...new Set(categories)];
   return (
     <>
       <Box
@@ -42,22 +38,24 @@ const Category = () => {
         >
           All Products
         </Link>
+
         <ArrowForwardIos sx={{ fontSize: "1rem" }} />
         <Typography variant="span" component="span">
-          {category}
+          {q}
         </Typography>
       </Box>
       <Box
         container
         spacing={2}
         sx={{
+          width: "100vw",
           height: "100vh",
           display: "flex",
           minWidth: "70vw",
           maxWidth: { md: "80vw", lg: "80vw" },
           justifyContent: "center",
           alignItems: "flex-start",
-          margin: "1rem auto",
+          margin: "0 auto",
           gap: "1rem",
           overflowX: { xs: "hidden", md: "visible" },
         }}
@@ -69,29 +67,28 @@ const Category = () => {
             flexWrap: "wrap",
             gap: "1rem",
             width: { md: "100%", xs: "96%" },
-            justifyContent: "flex-start",
-            alignItems: "center",
-            m: "0 2rem",
           }}
         >
-          {products
-            .filter((p) => p.category.includes(category))
-            .map((product) => (
-              <Link
-                to={`/products/${product.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <ProductCard products={product} />
-              </Link>
-            ))}
+          {products.map((product) => (
+            <Link
+              key={product.id}
+              to={`/products/${product.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <ProductCard products={product} />
+            </Link>
+          ))}
         </Box>
       </Box>
     </>
   );
 };
-export const loader = async () => {
-  const response = await fetch("http://localhost:5000/products");
+export const loader = async ({ request }) => {
+  const url = new URL(request.url);
+  const searchParams = new URLSearchParams(url.search);
+  const q = await searchParams.get("q");
+  const response = await fetch(`http://localhost:5000/products?q=${q}`);
   const products = await response.json();
-  return products;
+  return { products, q };
 };
-export default Category;
+export default Catalog;

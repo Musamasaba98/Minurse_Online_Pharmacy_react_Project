@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Typography,
   Box,
@@ -10,6 +10,7 @@ import {
   InputLabel,
   FilledInput,
   InputAdornment,
+  TextField,
 } from "@mui/material";
 import {
   AccountCircle,
@@ -20,7 +21,7 @@ import {
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import Menu from "@mui/material/Menu";
-import { Form } from "react-router-dom";
+import { Form, useSubmit } from "react-router-dom";
 import logo from "../images/logo.png";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
@@ -32,12 +33,14 @@ import Logout from "@mui/icons-material/Logout";
 
 const Navbar = () => {
   const menuId = 1;
+  const q = "";
+  const submit = useSubmit();
   const [anchorEl, setAnchorEl] = useState(null);
   const [user, setUser] = useState({
     name: "Masaba",
     location: "Uganda",
   });
-  const [showPassword, setShowPassword] = useState(false);
+
   const [cartItems, setCartItems] = useState([
     "musa",
     "masaba",
@@ -47,13 +50,28 @@ const Navbar = () => {
   ]);
 
   const open = Boolean(anchorEl);
+
+  useEffect(() => {
+    document.getElementById("q").value = q;
+  }, [q]);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleSearchItems = () => setShowPassword((show) => !show);
+
+  const handleSearchItems = (e) => {
+    e.preventDefault();
+    submit(e.currentTarget.form);
+  };
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      submit(e.currentTarget.form);
+    }
+  };
   return (
     <Box>
       <AppBar
@@ -117,17 +135,33 @@ const Navbar = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Form style={{ maxWidth: { md: "60%", lg: "70%" }, flexGrow: 1 }}>
+            <Form
+              action={`/catalog?${q}`}
+              id="search-form"
+              role="search"
+              style={{ maxWidth: { md: "60%", lg: "70%" }, flexGrow: 1 }}
+            >
               <FormControl
                 sx={{ width: "100%", mb: 1, mt: 1 }}
                 variant="filled"
               >
-                <InputLabel htmlFor="filter-items">Search</InputLabel>
-                <FilledInput
-                  id="filter-items"
-                  type="text"
-                  name="filter-items"
+                <TextField
+                  id="q"
+                  name="q"
                   size="small"
+                  variant="filled"
+                  defaultValue={q}
+                  label="Search Products,brands and categories"
+                  placeholder="Search"
+                  onKeyPress={handleSearch}
+                  onChange={(event) => {
+                    const isFirstSearch = q == null;
+                    submit(event.currentTarget.form, {
+                      replace: !isFirstSearch,
+                    });
+                    if (event.key === "Enter") {
+                    }
+                  }}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton

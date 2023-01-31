@@ -1,12 +1,17 @@
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { Button, Divider, Typography } from "@mui/material";
 import TextRating from "../components/Rating";
 import { Link, useLoaderData } from "react-router-dom";
-import { ArrowForwardIos } from "@mui/icons-material";
+import {
+  ArrowForwardIos,
+  ThumbUpAlt,
+  ThumbUpOffAlt,
+} from "@mui/icons-material";
 
 const Product = () => {
+  const [count, setCount] = useState(0);
   const {
     name,
     id,
@@ -21,7 +26,6 @@ const Product = () => {
   const amount = price.toLocaleString();
   return (
     <>
-      <Navbar />
       <Box
         sx={{
           marginTop: "6.3rem",
@@ -106,7 +110,18 @@ const Product = () => {
             <Typography pt=".2rem" pb=".2rem">{`Product # ${id}`}</Typography>
           </Box>
           <Divider variant="middle" component="p" />
-          <TextRating />
+          <Box display="flex" justifyContent="space-around">
+            <TextRating />
+            <Box display="flex" justifyContent="space-between">
+              {likes ? (
+                <ThumbUpAlt sx={{ color: "#1976d2" }} />
+              ) : (
+                <ThumbUpOffAlt />
+              )}
+              {likes}
+            </Box>
+          </Box>
+
           <Divider variant="middle" component="p" />
           <Box
             display="flex"
@@ -118,18 +133,33 @@ const Product = () => {
             mt=".5rem"
           >
             <Typography>{`Price: UGX ${amount}`}</Typography>
-            <Box display="flex" gap="1rem" alignItems="center">
-              <Button size="small" variant="contained">
-                -
+            {count ? (
+              <Box display="flex" gap="1rem" alignItems="center">
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={() => setCount(count - 1)}
+                >
+                  -
+                </Button>
+                <Typography>{count}</Typography>
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={() => setCount(count + 1)}
+                >
+                  +
+                </Button>
+              </Box>
+            ) : (
+              <Button
+                size="small"
+                variant="contained"
+                onClick={() => setCount(1)}
+              >
+                Add to Cart
               </Button>
-              <Typography>1</Typography>
-              <Button size="small" variant="contained">
-                +
-              </Button>
-            </Box>
-            <Button size="small" variant="contained">
-              Add to Cart
-            </Button>
+            )}
           </Box>
           <Divider variant="middle" component="p" />
           <Typography mt=".5rem">
