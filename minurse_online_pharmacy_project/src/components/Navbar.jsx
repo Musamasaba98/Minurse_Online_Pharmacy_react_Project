@@ -30,6 +30,8 @@ import Divider from "@mui/material/Divider";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
+import { cartActions } from "../Store/cartSlice";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const menuId = 1;
@@ -40,14 +42,10 @@ const Navbar = () => {
     name: "Masaba",
     location: "Uganda",
   });
+  //cartACTIONS
+  const { itemList, totalQuantity } = useSelector((state) => state.cart);
 
-  const [cartItems, setCartItems] = useState([
-    "musa",
-    "masaba",
-    "wakulya",
-    "mukunde",
-    "shamirah",
-  ]);
+  //CARTACTIONS
 
   const open = Boolean(anchorEl);
 
@@ -282,8 +280,11 @@ const Navbar = () => {
                   },
                 }}
               >
-                {cartItems.length ? (
-                  <Badge badgeContent={cartItems.length} color="error">
+                {itemList.length ? (
+                  <Badge
+                    badgeContent={itemList.length && totalQuantity}
+                    color="error"
+                  >
                     <ShoppingCartOutlined />
                   </Badge>
                 ) : (
@@ -340,8 +341,8 @@ const Navbar = () => {
               aria-label="show shopping cart items"
               color="inherit"
             >
-              {cartItems ? (
-                <Badge badgeContent={cartItems.legth} color="error">
+              {itemList.length ? (
+                <Badge badgeContent={itemList.legth} color="error">
                   <ShoppingCartOutlined />
                 </Badge>
               ) : (

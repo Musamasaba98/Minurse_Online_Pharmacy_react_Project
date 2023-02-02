@@ -9,18 +9,25 @@ import {
   ThumbUpAlt,
   ThumbUpOffAlt,
 } from "@mui/icons-material";
+import { cartActions } from "../Store/cartSlice";
+import { useDispatch } from "react-redux";
 
 const Product = () => {
   const [count, setCount] = useState(0);
+  //applying cart actions redux
+  const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } =
+    cartActions;
+  const dispatch = useDispatch();
+  //applying cart actions redux
   const {
     name,
     id,
     price,
     image,
+    quantity,
     category,
     isInStock,
     likes,
-    ratings,
     details,
   } = useLoaderData();
   const amount = price.toLocaleString();
@@ -133,29 +140,44 @@ const Product = () => {
             mt=".5rem"
           >
             <Typography>{`Price: UGX ${amount}`}</Typography>
-            {count ? (
-              <Box display="flex" gap="1rem" alignItems="center">
+            {quantity ? (
+              <Box display="flex" gap="3rem" alignItems="center">
+                <Box display="flex" gap="1rem" alignItems="center">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    onClick={() => dispatch(decreaseQuantity(id))}
+                  >
+                    -
+                  </Button>
+                  <Typography>{count}</Typography>
+                  <Button
+                    size="small"
+                    variant="contained"
+                    onClick={() => dispatch(increaseQuantity(id))}
+                  >
+                    +
+                  </Button>
+                </Box>
                 <Button
                   size="small"
                   variant="contained"
-                  onClick={() => setCount(count - 1)}
+                  onClick={() => {
+                    setCount(1);
+                    dispatch(removeFromCart(id));
+                  }}
                 >
-                  -
-                </Button>
-                <Typography>{count}</Typography>
-                <Button
-                  size="small"
-                  variant="contained"
-                  onClick={() => setCount(count + 1)}
-                >
-                  +
+                  Remove From Cart
                 </Button>
               </Box>
             ) : (
               <Button
                 size="small"
                 variant="contained"
-                onClick={() => setCount(1)}
+                onClick={() => {
+                  setCount(1);
+                  dispatch(addToCart({ id, quantity: 1 }));
+                }}
               >
                 Add to Cart
               </Button>
