@@ -30,7 +30,6 @@ import Divider from "@mui/material/Divider";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import { cartActions } from "../Store/cartSlice";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {

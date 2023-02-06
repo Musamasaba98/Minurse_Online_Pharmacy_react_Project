@@ -7,7 +7,7 @@
       "ratings": 3,
       "name": "Neomycin",
       "image": "antibiotic.webp",
-      "quantity": 4,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "antibiotics"
@@ -23,7 +23,7 @@
       "ratings": 1,
       "name": "Cefuroxime",
       "image": "antibiotic1.webp",
-      "quantity": 4,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "antibiotics"
@@ -62,8 +62,7 @@
       ],
       "price": 55000,
       "isInStock": 10,
-      "details": "levothyroxine is synthetic analogue of the hormone thyroxine therefore used in conditions where the hormone is in low concentration such as hypothyroidism and some goitres,it has some side effects heat intolerance,increased sweating,it is not proven to be safe in pregnancy",
-      "formData": {}
+      "details": "levothyroxine is synthetic analogue of the hormone thyroxine therefore used in conditions where the hormone is in low concentration such as hypothyroidism and some goitres,it has some side effects heat intolerance,increased sweating,it is not proven to be safe in pregnancy"
     },
     {
       "id": 5,
@@ -232,7 +231,7 @@
       "ratings": 4,
       "name": "BCG Vaccine",
       "image": "bcg.webp",
-      "quantity": 1,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "vaccine"
@@ -312,7 +311,7 @@
       "ratings": 3,
       "name": "Aloe Vera",
       "image": "herbal2.jpeg",
-      "quantity": 5,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "herbal"
@@ -851,7 +850,7 @@
       "ratings": 3,
       "name": "Eye Ointment",
       "image": "ointment.webp",
-      "quantity": 3,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "antibiotics"

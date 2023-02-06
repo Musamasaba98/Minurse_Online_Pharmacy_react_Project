@@ -4,7 +4,6 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import CategoryMenu from "../components/CategoryMenu";
-import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 
 const Category = () => {
