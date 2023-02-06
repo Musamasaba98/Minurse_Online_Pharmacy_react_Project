@@ -3,7 +3,7 @@ import React from "react";
 import SmallCard from "./SmallCard";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const PreviousBtn = (props) => {
   const { className, onClick } = props;
@@ -28,6 +28,7 @@ const NextBtn = (props) => {
 
 const ShowCategory = () => {
   const { categories } = useLoaderData();
+
   let settings = {
     className: "slider variable-width",
     dots: false,
@@ -90,7 +91,15 @@ const ShowCategory = () => {
     >
       <Slider {...settings}>
         {categories.map((category, index) => {
-          return <SmallCard key={index} category={category} />;
+          return (
+            <Link
+              key={index}
+              to={`/${category.title.toLowerCase()}`}
+              style={{ textDecoration: "none!important" }}
+            >
+              <SmallCard category={category} />
+            </Link>
+          );
         })}
       </Slider>
     </Box>

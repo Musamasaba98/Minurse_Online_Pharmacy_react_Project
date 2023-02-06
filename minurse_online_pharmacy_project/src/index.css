@@ -8,6 +8,9 @@ body{
         background-attachment: fixed;
         background-repeat: no-repeat;
 }
+a{
+        text-decoration: none;
+}
 .slick-arrow.slick-prev,.slick-arrow.slick-next{
         background:#1976d2;
         width:20px;

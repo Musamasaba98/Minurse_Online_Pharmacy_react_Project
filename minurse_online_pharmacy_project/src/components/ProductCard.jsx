@@ -15,10 +15,11 @@ const ProductCard = ({ products }) => {
         transition: "all 300ms ease-in-out",
         "&:hover": { transform: "scale(1.05) " },
         cursor: "pointer",
+        textDecoration: "none",
       }}
     >
       <Box
-        sx={{ height: "7rem" }}
+        sx={{ height: "7rem", textDecoration: "none" }}
         display="flex"
         justifyContent="center"
         alignItems="center"

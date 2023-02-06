@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import ProductCard from "./ProductCard";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
@@ -111,7 +111,15 @@ const ProductBoard = () => {
       </Box>
       <Slider {...settings}>
         {topProducts.map((product) => {
-          return <ProductCard key={product.id} products={product} />;
+          return (
+            <Link
+              key={product.id}
+              to={`/products/${product.id}`}
+              style={{ color: "red", textDecoration: "none!important" }}
+            >
+              <ProductCard products={product} />
+            </Link>
+          );
         })}
       </Slider>
     </Box>

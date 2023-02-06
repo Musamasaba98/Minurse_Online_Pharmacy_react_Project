@@ -33,7 +33,13 @@ const SmallCard = ({ category }) => {
         />
       </Box>
       <CardContent sx={{ backgroundColor: "#000c", color: "#fff" }}>
-        <Typography gutterBottom variant="h5" align="center" component="div">
+        <Typography
+          gutterBottom
+          variant="h5"
+          align="center"
+          component="div"
+          style={{ textDecoration: "none" }}
+        >
           {title}
         </Typography>
       </CardContent>
