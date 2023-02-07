@@ -11,6 +11,9 @@ body{
 a{
         text-decoration: none;
 }
+.cart_link:hover{
+        color: #1976d2!important;    
+}
 .slick-arrow.slick-prev,.slick-arrow.slick-next{
         background:#1976d2;
         width:20px;

@@ -206,7 +206,16 @@ const Product = () => {
                     value={1}
                     disabled={loading}
                     onClick={(e) => {
-                      dispatch(addToCart({ id: product.id, quantity: 1 }));
+                      dispatch(
+                        addToCart({
+                          id: product.id,
+                          quantity: 1,
+                          image: product.image,
+                          name: product.name,
+                          price: product.price,
+                          cummulativePrice: product.price,
+                        })
+                      );
                       handleSubmit(e);
                     }}
                   >

@@ -7,7 +7,7 @@
       "ratings": 3,
       "name": "Neomycin",
       "image": "antibiotic.webp",
-      "quantity": 4,
+      "quantity": 2,
       "category": [
         "pharmacy",
         "antibiotics"
@@ -23,7 +23,7 @@
       "ratings": 1,
       "name": "Cefuroxime",
       "image": "antibiotic1.webp",
-      "quantity": 4,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "antibiotics"
@@ -39,7 +39,7 @@
       "ratings": 3.5,
       "name": "Rifabutin 150 Mg",
       "image": "rifabutin.jpeg",
-      "quantity": 0,
+      "quantity": 3,
       "category": [
         "pharmacy",
         "antibiotics"
@@ -72,7 +72,7 @@
       "ratings": 3,
       "name": "Apixaban",
       "image": "anticoagulant.webp",
-      "quantity": 0,
+      "quantity": 5,
       "category": [
         "pharmacy",
         "anticoagulant"
@@ -136,7 +136,7 @@
       "ratings": 1.5,
       "name": "Thiazide",
       "image": "antihypertensive.jpeg",
-      "quantity": 0,
+      "quantity": 2,
       "category": [
         "pharmacy",
         "antihypertensive"
@@ -232,7 +232,7 @@
       "ratings": 4,
       "name": "BCG Vaccine",
       "image": "bcg.webp",
-      "quantity": 1,
+      "quantity": 6,
       "category": [
         "pharmacy",
         "vaccine"
@@ -312,7 +312,7 @@
       "ratings": 3,
       "name": "Aloe Vera",
       "image": "herbal2.jpeg",
-      "quantity": 5,
+      "quantity": 0,
       "category": [
         "pharmacy",
         "herbal"
@@ -617,7 +617,7 @@
       "ratings": 3,
       "name": "Movit",
       "image": "maseur.webp",
-      "quantity": 0,
+      "quantity": 1,
       "category": [
         "pharmacy",
         "beauty",
@@ -755,7 +755,7 @@
       "ratings": 3,
       "name": "Menestrual Cup",
       "image": "publichealth.webp",
-      "quantity": 0,
+      "quantity": 3,
       "category": [
         "pharmacy",
         "publichealth"
@@ -803,7 +803,7 @@
       "ratings": 3,
       "name": "Paracetamol",
       "image": "headache.webp",
-      "quantity": 0,
+      "quantity": 4,
       "category": [
         "pharmacy",
         "Analgesics"

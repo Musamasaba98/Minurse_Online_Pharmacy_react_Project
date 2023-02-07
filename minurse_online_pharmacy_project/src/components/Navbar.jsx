@@ -21,7 +21,7 @@ import {
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import Menu from "@mui/material/Menu";
-import { Form, useSubmit } from "react-router-dom";
+import { Form, Link, useSubmit } from "react-router-dom";
 import logo from "../images/logo.png";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
@@ -159,17 +159,6 @@ const Navbar = () => {
                     if (event.key === "Enter") {
                     }
                   }}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="Search for items"
-                        onClick={handleSearchItems}
-                        edge="end"
-                      >
-                        <SearchOutlined />
-                      </IconButton>
-                    </InputAdornment>
-                  }
                 />
               </FormControl>
             </Form>
@@ -185,7 +174,6 @@ const Navbar = () => {
                     aria-expanded={open ? "true" : undefined}
                     color="inherit"
                     display="flex"
-                    justifyContent="space-between"
                     width="2rem"
                     sx={{
                       color: "#1c2126",
@@ -267,6 +255,7 @@ const Navbar = () => {
                   </MenuItem>
                 </Menu>
               </Box>
+
               <IconButton
                 size="large"
                 aria-label="show shopping cart items"
@@ -279,19 +268,29 @@ const Navbar = () => {
                   },
                 }}
               >
-                {itemList.length ? (
-                  <Badge
-                    badgeContent={itemList.length && totalQuantity}
-                    color="error"
-                  >
+                <Link
+                  to={`/cart`}
+                  style={{
+                    display: "flex",
+                    color: "#1c2126",
+                    transition: "all 300ms ease-in-out",
+                  }}
+                  className="cart_link"
+                >
+                  {itemList.length ? (
+                    <Badge
+                      badgeContent={itemList.length && totalQuantity}
+                      color="error"
+                    >
+                      <ShoppingCartOutlined />
+                    </Badge>
+                  ) : (
                     <ShoppingCartOutlined />
-                  </Badge>
-                ) : (
-                  <ShoppingCartOutlined />
-                )}
-                <Box ml=".6rem">
-                  <Typography fontWeight="500">Cart</Typography>
-                </Box>
+                  )}
+                  <Box ml=".6rem">
+                    <Typography fontWeight="500">Cart</Typography>
+                  </Box>
+                </Link>
               </IconButton>
             </Box>
           </Box>

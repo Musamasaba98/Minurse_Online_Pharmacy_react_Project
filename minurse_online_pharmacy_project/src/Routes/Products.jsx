@@ -60,7 +60,6 @@ const Products = () => {
             flexWrap: "wrap",
             gap: "1rem",
             width: { md: "100%", xs: "96%" },
-            //mt: { xs: "9rem", md: "6.5rem" },
           }}
         >
           {products.map((product) => (
